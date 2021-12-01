@@ -30,6 +30,41 @@ During the orientation supervisor gets an urgent phone call and leaves the room 
 - After the announcement, the emergency lights are turned off and an auxiliary light (LED light) is switched on.
 <a name="header4"/></a>
 ## Flow of events
+![flow](https://user-images.githubusercontent.com/93401631/144256505-5da5759c-01db-4b82-8a45-53aa2d0da2a3.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+ 
 
 
 
