@@ -4,7 +4,7 @@
 - [Escape room layout](#header2)
 - [The Unthinkable Happens](#header3)
 - [Flow of events](#header4)
-- [Bill of Materials](#header5)
+
 
 <a name="header1"/></a>
 ## Storyline
@@ -16,18 +16,20 @@ The escape room consists of three rooms namely:
 ##### 1. Lobby room
 Lobby room contains LED lights, emergency light, aurora display, projector and speaker.
 ##### 2. Control room
-Control room consists of LED lights, speaker, logo, timer display, control room setup with wallpaper and monitor and plasma globes.
+Control room consists of LED lights, speaker, logo, timer display, control room setup with wallpaper and plasma globes.
 ##### 3. Server room
 Server room has LED lights and speaker.
 
 <a name="header3"/></a>
 ## The Unthinkable Happens
 
-
-
+During the orientation supervisor gets an urgent phone call and leaves the room to attend it and the following set of events takes place sequentially in the lobby room: 
+- The power goes off completely for a few seconds.
+- Emergency light (Xenon strobe) starts to flicker and simultaneously an announcement is made regarding the solar storm.
+- Aurora is seen through the window.
+- After the announcement, the emergency lights are turned off and an auxiliary light (LED light) is switched on.
 <a name="header4"/></a>
 ## Flow of events
 
 
-<a name="header5"/></a>
-## Bill of Materials
+
