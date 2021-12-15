@@ -1,15 +1,20 @@
-// NeoPixel Ring simple sketch (c) 2013 Shae Erisson
-// Released under the GPLv3 license to match the rest of the
-// Adafruit NeoPixel library
 
 #include <Adafruit_NeoPixel.h>
 #include <WiFi.h>
 #include <PubSubClient.h>
+#include "Settings.h"
 
-
-const char *ssid = "....."; // Enter your WiFi name
-const char *password = ".....";  // Enter WiFi password
-#define MQTT_SERVER_IP "192.168.1.113"
+/**
+ * Here is selected the node, it implies the mDNS name for OTA, topic subscription, allowed patterns
+ */
+// LEDSTRIP_MATRICE
+// LEDSTRIP_ROOM_NORTH
+// LEDSTRIP_ROOM_MIDDLE
+// LEDSTRIP_ROOM_SOUTH
+// LEDSTRIP_SERVER
+// LEDSTRIP_SERVER_2
+// LEDSTRIP_ROOM_LOBBY
+#define LEDSTRIP_ROOM_NORTH
 
 WiFiClient espClient;
 PubSubClient client(espClient);
@@ -44,10 +49,11 @@ void reconnect() {
     // Attempt to connect
     if (client.connect(clientId.c_str())) {
       Serial.println("connected");
-      // Once connected, publish an announcement...
-      //client.publish("shriyaTopic", "hello sss");
-      // ... and resubscribe
-      //client.subscribe("inTopic");
+      client.subscribe(mqtt_topic);
+      #ifdef LEDSTRIP_MATRICE
+            client.subscribe("1/gameOptions", 1);
+            client.subscribe("1/gameTime_in_sec");
+      #endif
     } else {
       Serial.print("failed, rc=");
       Serial.print(client.state());
@@ -110,7 +116,7 @@ void setup() {
 
 
    //mqtt calback
-   client.setServer(MQTT_SERVER_IP, 1883);
+   client.setServer(mqtt_server, 1883);
    client.setCallback(callback);
 }
 
@@ -123,7 +129,7 @@ void loop() {
   
   client.loop();
 
-  client.publish("Env/led", "1");
-  client.subscribe("Env/led");
+  //client.publish("Env/led", "1");
+  //client.subscribe("Env/led");
   
 }
